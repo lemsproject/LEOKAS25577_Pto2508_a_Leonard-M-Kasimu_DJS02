@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PodcastApp</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/index.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand" aria-label="Podcast App home">
+        <span class="brand-icon">◉</span>
+        <h1>PodcastApp</h1>
+      </div>
+      <div class="header-actions">
+        <button class="icon-button" aria-label="Search podcasts">⌕</button>
+        <img class="avatar" src="./assets/avatar.svg" alt="User profile" />
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="filters" aria-label="Podcast filters">
+        <strong>Filter by:</strong>
+        <select id="genre-filter" aria-label="Filter by genre"></select>
+        <select id="sort-filter" aria-label="Sort podcasts">
+          <option value="recent">Recently Updated</option>
+          <option value="popular">Most Popular</option>
+          <option value="newest">Newest</option>
+        </select>
+      </section>
+
+      <section
+        id="podcast-grid"
+        class="podcast-grid"
+        aria-live="polite"
+      ></section>
+    </main>
+
+    <!-- Modal for podcast details -->
+    <div id="modal" class="modal-backdrop hidden">
+      <div class="modal">
+        <button class="close-button" id="closeModal">&times;</button>
+        <div class="modal-top">
+          <img id="modalImage" class="modal-cover" alt="Podcast cover" />
+          <div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalUpdated" class="modal-date"></p>
+            <p id="modalDesc" class="description"></p>
+            <div id="modalGenres" class="genre-list"></div>
+          </div>
+        </div>
+        <h3 class="seasons-title">Seasons</h3>
+        <ul id="seasonList" class="season-list"></ul>
+      </div>
+    </div>
+
+    <div id="modal-root"></div>
+  </body>
+</html>
